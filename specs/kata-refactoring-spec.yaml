@@ -1,0 +1,101 @@
+# Kata Refactoring Opportunity Specification
+# Identifies code smells and refactoring opportunities for kata exercises
+
+refactoring_opportunities:
+  - name: "Long Method"
+    category: "code_smells"
+    kata_type: "refactor"
+    skill_domains: ["refactoring", "code_smell_detection"]
+    detection_criteria:
+      - "method_length > 30 lines"
+      - "multiple responsibility indicators"
+      - "deep nesting levels"
+      - "complex parameter lists"
+    refactoring_techniques:
+      - "extract method"
+      - "replace temp with query"
+      - "decompose conditional"
+      - "introduce parameter object"
+    kata_progression:
+      tinker: "identify extraction points"
+      contribute: "perform extraction"
+      engineer: "optimize design"
+    report_fields:
+      - "method_name"
+      - "line_count"
+      - "responsibilities"
+      - "suggested_extractions"
+      - "kata_scenario"
+
+  - name: "Feature Envy"
+    category: "code_smells"
+    kata_type: "refactor"
+    skill_domains: ["refactoring", "object_oriented_design"]
+    indicators:
+      - "method uses another class extensively"
+      - "data access across boundaries"
+      - "violation of tell don't ask"
+      - "inappropriate intimacy"
+    refactoring_approaches:
+      - "move method"
+      - "extract class"
+      - "hide delegate"
+    difficulty_assessment:
+      simple: "single method move"
+      moderate: "extract and move"
+      complex: "redesign boundaries"
+    report_fields:
+      - "envious_method"
+      - "target_class"
+      - "coupling_score"
+      - "refactoring_steps"
+      - "learning_outcomes"
+
+  - name: "Primitive Obsession"
+    category: "code_smells"
+    kata_type: "refactor"
+    skill_domains: ["refactoring", "domain_modeling"]
+    patterns:
+      - "multiple primitive parameters"
+      - "string/int used for domain concepts"
+      - "lack of value objects"
+      - "type code without polymorphism"
+    transformation_strategies:
+      - "introduce value object"
+      - "replace type code with class"
+      - "extract domain concept"
+    kata_scenarios:
+      beginner: "wrap single primitive"
+      intermediate: "create value object"
+      advanced: "model domain concept"
+    report_fields:
+      - "primitive_usage"
+      - "domain_concept"
+      - "refactoring_impact"
+      - "kata_instructions"
+      - "design_benefits"
+
+  - name: "Duplicated Code"
+    category: "code_smells"
+    kata_type: "refactor"
+    skill_domains: ["refactoring", "abstraction"]
+    duplication_types:
+      - "exact duplication"
+      - "similar structure"
+      - "parallel inheritance"
+      - "similar algorithms"
+    elimination_techniques:
+      - "extract method"
+      - "pull up method"
+      - "form template method"
+      - "introduce polymorphism"
+    complexity_factors:
+      - "number of duplicates"
+      - "variation degree"
+      - "location spread"
+    report_fields:
+      - "duplication_locations"
+      - "similarity_percentage"
+      - "abstraction_opportunity"
+      - "refactoring_challenge"
+      - "kata_objectives"

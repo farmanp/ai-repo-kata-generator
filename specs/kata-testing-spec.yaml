@@ -1,0 +1,86 @@
+# Kata Testing Opportunity Specification
+# Identifies testing gaps and opportunities for test-writing katas
+
+testing_patterns:
+  - name: "Untested Public API"
+    category: "test_coverage"
+    kata_type: "test_writing"
+    skill_domains: ["testing", "api_design"]
+    detection:
+      - "public methods without tests"
+      - "exported functions lacking coverage"
+      - "API endpoints without integration tests"
+    kata_structure:
+      scenario: "New team member needs to understand API behavior"
+      challenge: "Write comprehensive tests for the API"
+      difficulty_factors:
+        - "parameter_combinations"
+        - "error_scenarios"
+        - "edge_cases"
+    report_fields:
+      - "api_name"
+      - "coverage_percentage"
+      - "missing_test_cases"
+      - "kata_prompt"
+      - "learning_objectives"
+
+  - name: "Edge Case Coverage"
+    category: "test_quality"
+    kata_type: "test_writing"
+    skill_domains: ["testing", "debugging"]
+    indicators:
+      - "boundary conditions untested"
+      - "null/empty handling missing"
+      - "error paths uncovered"
+      - "concurrent scenarios untested"
+    kata_progression:
+      explore: "identify edge cases"
+      tinker: "write basic edge case tests"
+      contribute: "comprehensive edge case suite"
+    report_fields:
+      - "function_name"
+      - "identified_edge_cases"
+      - "coverage_gaps"
+      - "test_scenarios"
+      - "difficulty_rating"
+
+  - name: "Test Quality Issues"
+    category: "test_improvement"
+    kata_type: "test_refactoring"
+    skill_domains: ["testing", "refactoring"]
+    patterns:
+      - "test without assertions"
+      - "overly complex test setup"
+      - "brittle tests"
+      - "poor test naming"
+    improvement_opportunities:
+      - "simplify test setup"
+      - "improve assertions"
+      - "enhance test readability"
+      - "reduce test coupling"
+    report_fields:
+      - "test_file"
+      - "quality_issues"
+      - "improvement_suggestions"
+      - "refactoring_kata"
+      - "best_practices"
+
+  - name: "Integration Test Gaps"
+    category: "integration_testing"
+    kata_type: "integration"
+    skill_domains: ["testing", "system_design"]
+    detection:
+      - "service boundaries untested"
+      - "database interactions uncovered"
+      - "external API mocking missing"
+      - "end-to-end flows untested"
+    complexity_levels:
+      beginner: "single service integration"
+      intermediate: "multi-service flow"
+      advanced: "full system integration"
+    report_fields:
+      - "integration_points"
+      - "test_coverage"
+      - "missing_scenarios"
+      - "kata_challenge"
+      - "setup_requirements"

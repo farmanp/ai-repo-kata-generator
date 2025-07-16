@@ -1,0 +1,105 @@
+# Kata Pattern Detection Specification
+# Identifies code patterns suitable for kata exercises
+
+kata_patterns:
+  - name: "Complex Function"
+    category: "refactoring"
+    kata_type: "refactor"
+    skill_domains: ["refactoring", "code_smell_detection"]
+    progression_level: "tinker"
+    hints:
+      - "function length > 50 lines"
+      - "cyclomatic complexity > 10"
+      - "multiple nested loops"
+      - "multiple responsibilities"
+    report_fields:
+      - "function_name"
+      - "line_count"
+      - "complexity_score"
+      - "suggested_kata_prompt"
+      - "learning_objectives"
+
+  - name: "Missing Tests"
+    category: "testing"
+    kata_type: "test_writing"
+    skill_domains: ["testing", "test_driven_development"]
+    progression_level: "contribute"
+    hints:
+      - "public function without test"
+      - "uncovered code paths"
+      - "complex logic without tests"
+      - "error handling without tests"
+    report_fields:
+      - "function_name"
+      - "test_coverage"
+      - "complexity"
+      - "suggested_test_scenarios"
+      - "kata_difficulty"
+
+  - name: "Code Duplication"
+    category: "refactoring"
+    kata_type: "refactor"
+    skill_domains: ["refactoring", "architecture"]
+    progression_level: "engineer"
+    hints:
+      - "similar code blocks"
+      - "repeated patterns"
+      - "copy-paste indicators"
+      - "similar function signatures"
+    report_fields:
+      - "duplicate_locations"
+      - "similarity_percentage"
+      - "refactoring_opportunity"
+      - "kata_scenario"
+      - "expected_outcome"
+
+  - name: "Complex Conditional"
+    category: "comprehension"
+    kata_type: "comprehension"
+    skill_domains: ["code_comprehension", "debugging"]
+    progression_level: "explore"
+    hints:
+      - "nested if statements > 3 levels"
+      - "complex boolean expressions"
+      - "multiple condition checks"
+      - "switch/case with many branches"
+    report_fields:
+      - "location"
+      - "nesting_depth"
+      - "condition_count"
+      - "comprehension_challenge"
+      - "kata_questions"
+
+  - name: "Performance Bottleneck"
+    category: "optimization"
+    kata_type: "performance"
+    skill_domains: ["performance", "debugging"]
+    progression_level: "engineer"
+    hints:
+      - "nested loops with data operations"
+      - "repeated database queries"
+      - "inefficient algorithms"
+      - "memory-intensive operations"
+    report_fields:
+      - "bottleneck_type"
+      - "location"
+      - "estimated_complexity"
+      - "optimization_hint"
+      - "kata_challenge"
+
+  - name: "Security Vulnerability"
+    category: "security"
+    kata_type: "bug_hunt"
+    skill_domains: ["security", "debugging"]
+    progression_level: "contribute"
+    hints:
+      - "SQL injection patterns"
+      - "unsanitized input"
+      - "hardcoded credentials"
+      - "weak cryptography"
+    report_fields:
+      - "vulnerability_type"
+      - "severity"
+      - "location"
+      - "fix_hint"
+      - "security_kata_scenario"

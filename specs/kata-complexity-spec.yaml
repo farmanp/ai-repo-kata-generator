@@ -1,0 +1,82 @@
+# Kata Complexity Analysis Specification
+# Analyzes code complexity to generate appropriate kata exercises
+
+complexity_indicators:
+  - name: "Cyclomatic Complexity"
+    category: "code_metrics"
+    thresholds:
+      low: 1-5
+      medium: 6-10
+      high: 11-20
+      very_high: ">20"
+    kata_mappings:
+      low: "explore"
+      medium: "tinker"
+      high: "contribute"
+      very_high: "engineer"
+    report_fields:
+      - "function_name"
+      - "complexity_score"
+      - "decision_points"
+      - "suggested_kata_level"
+      - "refactoring_hints"
+
+  - name: "Cognitive Complexity"
+    category: "comprehension_metrics"
+    factors:
+      - "nesting_depth"
+      - "logical_operators"
+      - "control_flow_breaks"
+      - "recursion"
+    kata_opportunities:
+      - type: "comprehension"
+        trigger: "score > 15"
+        difficulty: "intermediate"
+      - type: "refactor"
+        trigger: "score > 25"
+        difficulty: "advanced"
+    report_fields:
+      - "location"
+      - "cognitive_score"
+      - "contributing_factors"
+      - "comprehension_challenges"
+      - "simplification_strategies"
+
+  - name: "Dependency Complexity"
+    category: "architecture_metrics"
+    indicators:
+      - "import_count"
+      - "coupling_score"
+      - "dependency_depth"
+      - "circular_dependencies"
+    kata_types:
+      - "architecture"
+      - "refactor"
+      - "module_design"
+    report_fields:
+      - "module_name"
+      - "dependency_count"
+      - "coupling_analysis"
+      - "decoupling_opportunities"
+      - "kata_scenario"
+
+  - name: "Data Flow Complexity"
+    category: "data_metrics"
+    patterns:
+      - "data_transformations"
+      - "state_mutations"
+      - "async_operations"
+      - "data_pipeline_length"
+    suitable_katas:
+      - type: "debugging"
+        focus: "trace data flow"
+      - type: "refactor"
+        focus: "simplify transformations"
+      - type: "test_writing"
+        focus: "data validation"
+    report_fields:
+      - "flow_description"
+      - "transformation_count"
+      - "mutation_points"
+      - "debugging_challenges"
+      - "test_scenarios"
