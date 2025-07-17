@@ -34,7 +34,8 @@ def call_claude(prompt: str, api_key: str, model: str, temperature: float, max_t
         temperature=temperature,
         messages=[{"role": "user", "content": prompt}],
     )
-    return message.content
+    # Join the list of content blocks into a single string
+    return "\n".join(message.content) if isinstance(message.content, list) else message.content
 
 
 def main() -> None:
