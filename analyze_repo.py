@@ -106,7 +106,8 @@ def main() -> None:
     else:
         print(prompt)
         print(
-            f"\nNo API call made. Paste the above prompt into Claude and save the JSON to {output_file}"
+            f"\nNo API call made. Paste the above prompt into Claude and save "
+            f"the JSON to {output_file}"
         )
 
     if cleanup:

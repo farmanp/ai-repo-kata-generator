@@ -30,11 +30,7 @@
     "develop": {
       "required_status_checks": {
         "strict": true,
-        "contexts": [
-          "continuous-integration/github-actions",
-          "test",
-          "lint"
-        ]
+        "contexts": ["continuous-integration/github-actions", "test", "lint"]
       },
       "enforce_admins": false,
       "required_pull_request_reviews": {

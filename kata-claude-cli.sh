@@ -85,7 +85,7 @@ EOF
 log() {
     local level=$1
     local message=$2
-    
+
     if [[ $VERBOSE -eq 1 ]]; then
         case $level in
             "ERROR")
@@ -110,54 +110,54 @@ extract_prompt_section() {
     local section_type=$1
     local in_section=0
     local section_content=""
-    
+
     case $section_type in
         "base")
             # Extract base prompt template
-            awk '/^## Base Prompt Template/,/^## Specific Audit Type Prompts/ { 
-                if (!/^## / || /^## Base Prompt Template/) print 
+            awk '/^## Base Prompt Template/,/^## Specific Audit Type Prompts/ {
+                if (!/^## / || /^## Base Prompt Template/) print
             }' "$prompt_file" | sed '1d;$d'
             ;;
         "patterns")
             # Extract pattern detection prompt
-            awk '/^### Pattern Detection Prompt/,/^### Complexity Analysis Prompt/ { 
-                if (!/^### / || /^### Pattern Detection Prompt/) print 
+            awk '/^### Pattern Detection Prompt/,/^### Complexity Analysis Prompt/ {
+                if (!/^### / || /^### Pattern Detection Prompt/) print
             }' "$prompt_file" | sed '1d;$d'
             ;;
         "complexity")
             # Extract complexity analysis prompt
-            awk '/^### Complexity Analysis Prompt/,/^### Testing Opportunities Prompt/ { 
-                if (!/^### / || /^### Complexity Analysis Prompt/) print 
+            awk '/^### Complexity Analysis Prompt/,/^### Testing Opportunities Prompt/ {
+                if (!/^### / || /^### Complexity Analysis Prompt/) print
             }' "$prompt_file" | sed '1d;$d'
             ;;
         "testing")
             # Extract testing opportunities prompt
-            awk '/^### Testing Opportunities Prompt/,/^### Refactoring Opportunities Prompt/ { 
-                if (!/^### / || /^### Testing Opportunities Prompt/) print 
+            awk '/^### Testing Opportunities Prompt/,/^### Refactoring Opportunities Prompt/ {
+                if (!/^### / || /^### Testing Opportunities Prompt/) print
             }' "$prompt_file" | sed '1d;$d'
             ;;
         "refactoring")
             # Extract refactoring opportunities prompt
-            awk '/^### Refactoring Opportunities Prompt/,/^## Context-Specific Prompts/ { 
-                if (!/^### / || /^### Refactoring Opportunities Prompt/) print 
+            awk '/^### Refactoring Opportunities Prompt/,/^## Context-Specific Prompts/ {
+                if (!/^### / || /^### Refactoring Opportunities Prompt/) print
             }' "$prompt_file" | sed '1d;$d'
             ;;
         "job-posting")
             # Extract job posting analysis prompt
-            awk '/^### For Job Posting Analysis/,/^### For Team Onboarding/ { 
-                if (!/^### / || /^### For Job Posting Analysis/) print 
+            awk '/^### For Job Posting Analysis/,/^### For Team Onboarding/ {
+                if (!/^### / || /^### For Job Posting Analysis/) print
             }' "$prompt_file" | sed '1d;$d'
             ;;
         "onboarding")
             # Extract team onboarding prompt
-            awk '/^### For Team Onboarding/,/^### For Skill Development/ { 
-                if (!/^### / || /^### For Team Onboarding/) print 
+            awk '/^### For Team Onboarding/,/^### For Skill Development/ {
+                if (!/^### / || /^### For Team Onboarding/) print
             }' "$prompt_file" | sed '1d;$d'
             ;;
         "skill-development")
             # Extract skill development prompt
-            awk '/^### For Skill Development/,/^## Output Examples/ { 
-                if (!/^### / || /^### For Skill Development/) print 
+            awk '/^### For Skill Development/,/^## Output Examples/ {
+                if (!/^### / || /^### For Skill Development/) print
             }' "$prompt_file" | sed '1d;$d'
             ;;
         *)
@@ -171,11 +171,11 @@ extract_prompt_section() {
 get_prompt() {
     local prompt_type=$1
     local content=""
-    
+
     log "INFO" "Retrieving prompt: $prompt_type"
-    
+
     content=$(extract_prompt_section "$prompt_type")
-    
+
     if [[ $CLAUDE_CODE_MODE -eq 1 ]]; then
         # Format for Claude Code integration
         echo "# Kata Generation Prompt: $prompt_type"
@@ -198,7 +198,7 @@ get_prompt() {
 get_spec() {
     local spec_type=$1
     local spec_file=""
-    
+
     case $spec_type in
         "patterns")
             spec_file="$SPECS_DIR/kata-patterns-spec.yaml"
@@ -217,14 +217,14 @@ get_spec() {
             return 1
             ;;
     esac
-    
+
     log "INFO" "Retrieving specification: $spec_type"
-    
+
     if [[ ! -f "$spec_file" ]]; then
         log "ERROR" "Specification file not found: $spec_file"
         return 1
     fi
-    
+
     if [[ $CLAUDE_CODE_MODE -eq 1 ]]; then
         echo "# Kata Specification: $spec_type"
         echo ""
@@ -241,15 +241,15 @@ get_spec() {
 # Function to generate Claude Code command
 generate_claude_command() {
     local repo_path=$1
-    
+
     if [[ ! -d "$repo_path" ]]; then
         log "ERROR" "Repository path does not exist: $repo_path"
         return 1
     fi
-    
+
     # Get absolute path
     repo_path=$(cd "$repo_path" && pwd)
-    
+
     cat << EOF
 # Claude Code Integration Command
 
