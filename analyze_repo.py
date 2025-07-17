@@ -70,7 +70,11 @@ def main() -> None:
     if api_key:
         try:
             result = call_claude(prompt, api_key, args.model, args.temperature, args.max_tokens)
-        except Exception:
+        except anthropic.APIError as e:
+            logging.error(f"Anthropic API error: {e}")
+            result = None
+        except Exception as e:
+            logging.error(f"Unexpected error: {e}")
             result = None
 
     if result:
