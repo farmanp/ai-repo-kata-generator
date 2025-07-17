@@ -140,7 +140,7 @@ Edit
 - title: "Secure API Endpoint Kata"
   level: Senior
   scenario: |
-    You are a backend engineer at HealthCo. The API endpoint below is used to retrieve patient records, 
+    You are a backend engineer at HealthCo. The API endpoint below is used to retrieve patient records,
     but it was written hastily and has security flaws (no authentication and vulnerable to SQL injection).
     ```
     @app.route('/records')
