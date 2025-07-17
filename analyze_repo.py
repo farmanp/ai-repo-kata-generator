@@ -10,8 +10,12 @@ PROMPT_FILE = Path('prompts/repo-analysis-prompt.md')
 
 def clone_repo(url: str) -> str:
     tmpdir = tempfile.mkdtemp(prefix='repo-analyze-')
-    subprocess.run(['git', 'clone', '--depth', '1', url, tmpdir], check=True)
-    return tmpdir
+    try:
+        subprocess.run(['git', 'clone', '--depth', '1', url, tmpdir], check=True)
+        return tmpdir
+    except Exception as e:
+        shutil.rmtree(tmpdir, ignore_errors=True)
+        raise e
 
 
 def load_prompt(repo_path: str) -> str:
