@@ -1,0 +1,32 @@
+[extend]
+useDefault = true
+
+[[rules]]
+description = "AWS Access Key"
+regex = '''AKIA[0-9A-Z]{16}'''
+tags = ["aws", "credentials"]
+
+[[rules]]
+description = "GitHub Personal Access Token"
+regex = '''ghp_[0-9a-zA-Z]{36}'''
+tags = ["github", "pat"]
+
+[[rules]]
+description = "Generic API Key"
+regex = '''(?i)(api_key|apikey|api-key)\s*[:=]\s*['\"]?[a-zA-Z0-9]{32,}['\"]?'''
+tags = ["api", "generic"]
+
+[[rules]]
+description = "Generic Secret"
+regex = '''(?i)(secret|password|passwd|pwd)\s*[:=]\s*['\"]?[a-zA-Z0-9]{8,}['\"]?'''
+tags = ["secret", "generic"]
+
+[allowlist]
+paths = [
+    ".gitleaks.toml",
+    "**/*.md",
+    "**/test/**",
+    "**/tests/**",
+    "**/spec/**",
+    "**/specs/**"
+]
