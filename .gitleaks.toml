@@ -24,9 +24,9 @@ tags = ["secret", "generic"]
 [allowlist]
 paths = [
     ".gitleaks.toml",
-    "**/*.md",
-    "**/test/**",
-    "**/tests/**",
-    "**/spec/**",
-    "**/specs/**"
+    ".*\\.md$",
+    ".*/test/.*",
+    ".*/tests/.*",
+    ".*/spec/.*",
+    ".*/specs/.*"
 ]

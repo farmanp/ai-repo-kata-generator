@@ -4,42 +4,42 @@
 kata:
   title: "Descriptive Kata Title"
   type: "comprehension|bug_hunt|refactor|test_writing|feature_addition|performance|architecture|integration|module_design"
-  skill_domains: 
+  skill_domains:
     - "code_comprehension"
     - "refactoring"
     # Add more from taxonomy
   progression_level: "explore|tinker|contribute|engineer|architect"
   time_estimate: "30 minutes"
-  
+
   # Context and narrative
   scenario: |
     2-3 sentences providing context for why this exercise matters.
     Set up the business or technical scenario that makes this task relevant.
-  
+
   # The actual task
   challenge: |
     Clear, specific description of what the developer needs to accomplish.
     Be precise about the expected outcome.
-  
+
   # Measurable success criteria
   acceptance_criteria:
     - "First specific, testable criterion"
     - "Second criterion"
     - "Third criterion"
     # Add more as needed
-  
+
   # Optional guided assistance
   hints:
     - "First hint to guide without giving away solution"
     - "Second hint for those who need more help"
     # Keep hints progressive in revelation
-  
+
   # Educational goals
   learning_objectives:
     - "Primary skill or concept to learn"
     - "Secondary learning outcome"
     - "Additional benefit from completing this kata"
-  
+
   # Technical setup
   setup:
     repository_url: "https://github.com/org/repo"
@@ -48,13 +48,13 @@ kata:
     dependencies:
       - "Java 11+"
       - "Maven 3.6+"
-    
+
   # Assessment and solutions
   assessment:
     automated_tests: true
     test_command: "mvn test"
     solution_branch: "kata/exercise-name-solution"
-    
+
   # Metadata
   metadata:
     author: "Your Name"
@@ -67,7 +67,7 @@ kata:
     prerequisites:
       - "Basic Java knowledge"
       - "Understanding of design patterns"
-    
+
   # Related exercises
   related_katas:
     - title: "Previous Kata in Sequence"

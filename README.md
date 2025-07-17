@@ -25,6 +25,9 @@ chmod +x kata-audit-runner.sh test-kata-audit.sh
 
 # Run with specific options
 ./kata-audit-runner.sh --type patterns --format markdown --output results.md /path/to/repo
+
+# Analyze a repository with Claude
+python3 analyze_repo.py /path/or/url/to/repo
 ```
 
 ## Project Structure
@@ -32,6 +35,7 @@ chmod +x kata-audit-runner.sh test-kata-audit.sh
 ```
 ai-repo-kata-generator/
 ├── kata-audit-runner.sh          # Main audit script
+├── analyze_repo.py               # Claude-based repo analyzer
 ├── specs/                        # YAML specifications for pattern detection
 │   ├── kata-patterns-spec.yaml   # Code pattern detection rules
 │   ├── kata-complexity-spec.yaml # Complexity analysis rules
@@ -79,21 +83,25 @@ Katas are categorized by difficulty:
 ## Usage Examples
 
 ### Basic Audit
+
 ```bash
 ./kata-audit-runner.sh /path/to/repo
 ```
 
 ### Specific Audit Type
+
 ```bash
 ./kata-audit-runner.sh --type refactoring /path/to/repo
 ```
 
 ### Generate Markdown Report
+
 ```bash
 ./kata-audit-runner.sh --format markdown --output kata-report.md /path/to/repo
 ```
 
 ### CI/CD Integration
+
 ```yaml
 # .github/workflows/kata-audit.yml
 name: Kata Audit

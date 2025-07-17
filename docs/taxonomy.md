@@ -31,7 +31,7 @@ Here’s a structured **Kata Taxonomy for Code Repositories** — designed to ex
 | 🐛 **Bug Hunt Kata**      | Reproduce & fix a known bug (often based on a past issue/commit) | "Fix off-by-one error in cart item count"                    |
 | 🧼 **Refactor Kata**      | Improve readability, modularity, or performance                  | "Break this 300-line function into smaller units"            |
 | 🧪 **Test Writing Kata**  | Add missing unit/integration tests                               | "Write a test for `checkout()` to cover coupon logic"        |
-| ➕ **Feature Add Kata**    | Add a small feature or enhancement                               | "Add 'favorite' button to items and persist to DB"           |
+| ➕ **Feature Add Kata**   | Add a small feature or enhancement                               | "Add 'favorite' button to items and persist to DB"           |
 | 🔧 **Integration Kata**   | Work across modules/files to implement something                 | "Wire up inventory service to order processor"               |
 | 🏗 **Architecture Kata**  | Propose or critique a system/module design                       | "Redesign the plugin system to be extensible"                |
 | 🚦 **CI/DevOps Kata**     | Fix/build CI scripts, linters, or Dockerfiles                    | "Make test suite pass in CI"                                 |
@@ -44,7 +44,7 @@ Here’s a structured **Kata Taxonomy for Code Repositories** — designed to ex
 | Scope    | Description               | Use Case Example                          |
 | -------- | ------------------------- | ----------------------------------------- |
 | 🔹 Micro | Function/Class level      | Refactor a class, explain a method        |
-| ⚪ Meso   | Module or Feature level   | Debug entire cart module                  |
+| ⚪ Meso  | Module or Feature level   | Debug entire cart module                  |
 | 🔘 Macro | System/Architecture level | Propose repo restructure or system design |
 
 ---
@@ -69,7 +69,7 @@ Here’s a structured **Kata Taxonomy for Code Repositories** — designed to ex
 | 🧪 Tests         | Unit or integration test coverage gaps | Test Writing Kata, Refactor Kata        |
 | 🧵 Code Smells   | Long functions, duplicated logic       | Refactor Kata, Microservice Split Kata  |
 | 🐞 Issues        | Closed/fixed bugs                      | Bug Fix Kata, Reproduce-from-Issue Kata |
-| ⛓ Git History    | Big commits, rollbacks, hotfixes       | Regression Kata, Change Impact Kata     |
+| ⛓ Git History   | Big commits, rollbacks, hotfixes       | Regression Kata, Change Impact Kata     |
 | 📉 Observability | Log events, alerts, SLO dashboards     | Debug Kata, Incident Response Kata      |
 
 ---
@@ -98,11 +98,11 @@ specs:
 
 ### ✅ Summary: Why This Code Repo Taxonomy Works
 
-* **Decouples content scope from skill target** — you can practice debugging at the micro or macro level
-* **Standardizes kata design across any codebase** — from internal services to open source
-* **Drives deliberate practice** through tightly scoped, real-context exercises
-* **Supports progression** from reading to modifying to redesigning
-* **Enables discoverability and automation** using tags and triggers
+- **Decouples content scope from skill target** — you can practice debugging at the micro or macro level
+- **Standardizes kata design across any codebase** — from internal services to open source
+- **Drives deliberate practice** through tightly scoped, real-context exercises
+- **Supports progression** from reading to modifying to redesigning
+- **Enables discoverability and automation** using tags and triggers
 
 ---
 

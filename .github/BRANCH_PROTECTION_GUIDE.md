@@ -5,6 +5,7 @@ This repository implements comprehensive branch protection rules to ensure code 
 ## Protected Branches
 
 ### Main Branch (`main`)
+
 - **Purpose**: Production-ready code
 - **Direct pushes**: Disabled
 - **Force pushes**: Disabled
@@ -17,6 +18,7 @@ This repository implements comprehensive branch protection rules to ensure code 
 - **Require conversation resolution**: Yes
 
 ### Development Branch (`develop`)
+
 - **Purpose**: Integration branch for features
 - **Direct pushes**: Disabled
 - **Force pushes**: Disabled
@@ -117,6 +119,7 @@ footer
 Types: feat, fix, docs, style, refactor, test, chore
 
 Example:
+
 ```
 feat(auth): add OAuth2 integration
 

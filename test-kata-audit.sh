@@ -35,14 +35,14 @@ test_fail() {
 # Create sample test repository
 setup_test_repo() {
     mkdir -p "$TEST_REPO/src" "$TEST_REPO/tests"
-    
+
     # Create a complex function for pattern detection
     cat > "$TEST_REPO/src/complex_function.py" << 'EOF'
 def calculate_order_total(order_items, customer_type, discount_code):
     """Complex function that needs refactoring"""
     total = 0
     discount = 0
-    
+
     # Calculate base total
     for item in order_items:
         if item['quantity'] > 0:
@@ -57,7 +57,7 @@ def calculate_order_total(order_items, customer_type, discount_code):
                     if item['category'] == 'electronics':
                         subtotal = subtotal * 0.95
                 total += subtotal
-    
+
     # Apply discount codes
     if discount_code:
         if discount_code == 'SAVE10':
@@ -66,14 +66,14 @@ def calculate_order_total(order_items, customer_type, discount_code):
             discount = total * 0.2
         elif discount_code == 'HALFOFF':
             discount = total * 0.5
-    
+
     # Calculate tax
     tax_rate = 0.08
     if customer_type == 'business':
         tax_rate = 0.06
-    
+
     final_total = (total - discount) * (1 + tax_rate)
-    
+
     return final_total
 EOF
 
@@ -83,12 +83,12 @@ export function parseUserInput(input) {
     if (!input || typeof input !== 'string') {
         return null;
     }
-    
+
     const parts = input.split(':');
     if (parts.length !== 2) {
         return null;
     }
-    
+
     return {
         username: parts[0].trim(),
         action: parts[1].trim()

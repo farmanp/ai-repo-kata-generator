@@ -22,7 +22,9 @@ The Kata Audit system analyzes codebases to identify opportunities for creating 
 ## Audit Types
 
 ### 1. Pattern Detection (`--type patterns`)
+
 Identifies code patterns suitable for kata exercises:
+
 - Complex functions needing refactoring
 - Missing test coverage
 - Code duplication
@@ -30,21 +32,27 @@ Identifies code patterns suitable for kata exercises:
 - Performance bottlenecks
 
 ### 2. Complexity Analysis (`--type complexity`)
+
 Analyzes code complexity metrics:
+
 - Cyclomatic complexity
 - Cognitive complexity
 - Dependency complexity
 - Data flow complexity
 
 ### 3. Testing Opportunities (`--type testing`)
+
 Finds testing gaps:
+
 - Untested public APIs
 - Missing edge case coverage
 - Test quality issues
 - Integration test gaps
 
 ### 4. Refactoring Opportunities (`--type refactoring`)
+
 Detects code smells:
+
 - Long methods
 - Feature envy
 - Primitive obsession
@@ -169,11 +177,13 @@ The `kata-audit-runner.sh` script can be extended:
 ## Troubleshooting
 
 ### No Opportunities Found
+
 - Ensure the repository path is correct
 - Check that specification files exist in `specs/`
 - Verify the codebase contains the patterns you're searching for
 
 ### Script Errors
+
 - Ensure bash version 4.0+ is installed
 - Check file permissions: `chmod +x kata-audit-runner.sh`
 - Verify Python is installed for JSON/YAML formatting

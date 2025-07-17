@@ -16,9 +16,9 @@ setup_branch_protection() {
     local branch=$1
     local reviewers=$2
     local enforce_admins=$3
-    
+
     echo "Configuring protection for $branch branch..."
-    
+
     # Create branch protection rule
     gh api \
         --method PUT \
@@ -39,7 +39,7 @@ setup_branch_protection() {
         --field "required_conversation_resolution=true" \
         --field "lock_branch=false" \
         --field "allow_fork_syncing=false"
-    
+
     echo "✓ Branch protection configured for $branch"
 }
 

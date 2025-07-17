@@ -168,16 +168,19 @@ The order calculation logic in OrderService has grown complex over time. New tea
 Refactor the calculateTotal() method by extracting the discount calculation logic into separate, well-named methods.
 
 **Acceptance Criteria**:
+
 - [ ] Extract at least 3 methods from calculateTotal()
 - [ ] Each extracted method has a single responsibility
 - [ ] All tests still pass
 - [ ] The main method is under 20 lines
 
 **Hints**:
+
 - Look for comments that explain what a code block does
 - Group related calculations together
 
 **Learning Objectives**:
+
 - Recognize the "Long Method" code smell
 - Apply the "Extract Method" refactoring technique
 - Improve code readability through better naming
@@ -199,6 +202,7 @@ The UserValidator class handles user input validation but recent production issu
 Write comprehensive tests for the validateEmail() method, ensuring all edge cases are covered.
 
 **Acceptance Criteria**:
+
 - [ ] Test valid email formats
 - [ ] Test invalid email formats
 - [ ] Test boundary conditions (empty, null, very long)
@@ -206,6 +210,7 @@ Write comprehensive tests for the validateEmail() method, ensuring all edge case
 - [ ] Achieve 100% branch coverage
 
 **Learning Objectives**:
+
 - Identify edge cases systematically
 - Write thorough test cases
 - Understand email validation complexity
