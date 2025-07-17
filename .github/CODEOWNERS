@@ -1,0 +1,32 @@
+# CODEOWNERS file for ai-repo-kata-generator
+# This file defines who is responsible for code in this repository.
+# Each line is a file pattern followed by one or more owners.
+
+# Default owner for everything in the repo
+*                           @farmanp
+
+# Documentation
+/docs/                      @farmanp
+/README.md                  @farmanp
+*.md                        @farmanp
+
+# Configuration files
+/.github/                   @farmanp
+/.pre-commit-config.yaml    @farmanp
+/.gitleaks.toml            @farmanp
+
+# Core scripts
+/scripts/                   @farmanp
+/*.sh                       @farmanp
+
+# Specifications and templates
+/specs/                     @farmanp
+/templates/                 @farmanp
+/prompts/                   @farmanp
+
+# Tests
+/tests/                     @farmanp
+/test-*.sh                  @farmanp
+
+# Examples
+/examples/                  @farmanp
