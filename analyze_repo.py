@@ -8,7 +8,14 @@ from pathlib import Path
 PROMPT_FILE = Path('prompts/repo-analysis-prompt.md')
 
 
+def is_valid_git_url(url: str) -> bool:
+    import re
+    git_url_pattern = re.compile(r'^(https://|git@|ssh://|http://)[\w.@:/\-~]+(\.git)?$')
+    return bool(git_url_pattern.match(url))
+
 def clone_repo(url: str) -> str:
+    if not is_valid_git_url(url):
+        raise ValueError(f"Invalid Git repository URL: {url}")
     tmpdir = tempfile.mkdtemp(prefix='repo-analyze-')
     try:
         subprocess.run(['git', 'clone', '--depth', '1', url, tmpdir], check=True)
