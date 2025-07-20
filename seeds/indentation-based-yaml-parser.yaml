@@ -1,0 +1,22 @@
+seed:
+  title: "Indentation-Based YAML Parser"
+  source_reference: "generate_katas.py:24-85"
+  concept: "Building nested data structures from indentation"
+  type: "mechanical"
+  estimated_time: "5-10 minutes"
+  prompt: |
+    Examine the `_basic_yaml_load` function and use it to parse a small YAML string.
+    What Python data structure does it return for the following input?
+
+    ```yaml
+    foo:
+      - bar: 1
+      - baz:
+          - qux
+    ```
+  hint: "Track how `stack`, `indents`, and `key_stack` interact as indentation changes"
+  expected_output: "{'foo': [{'bar': 1}, {'baz': ['qux']}]}"
+  reflection_question: "How does the parser know when to switch from dictionaries to lists?"
+  related_katas:
+    - "Parsing Nested Structures"
+    - "Indentation Handling"
