@@ -1,0 +1,20 @@
+seed:
+  title: "Manual YAML Serialization"
+  source_reference: "generate_katas.py:103-126"
+  concept: "Converting nested Python objects to YAML"
+  type: "mechanical"
+  estimated_time: "5-10 minutes"
+  prompt: |
+    Study the `_dict_to_yaml` function. Use it to serialize the dictionary
+    `{"a": 1, "b": [2, {"c": "d"}]}` and show the resulting YAML lines.
+  hint: "Watch how the function handles lists and indentation recursively"
+  expected_output: |
+    a: 1
+    b:
+      - 2
+      -
+        c: 'd'
+  reflection_question: "Why does the serializer quote strings but not numbers?"
+  related_katas:
+    - "Serialization Formats"
+    - "Recursion in Python"
