@@ -9,9 +9,9 @@ seed:
     `{"a": 1, "b": [2, {"c": "d"}]}` and show the resulting YAML lines.
   hint: "Watch how the function handles lists and indentation recursively"
   expected_output: |
-    a: '1'
+    a: 1
     b:
-      - '2'
+      - 2
       -
         c: 'd'
   reflection_question: "Why does the serializer quote strings but not numbers?"

@@ -21,9 +21,9 @@ Watch how the function handles lists and indentation recursively.
 
 ## ✅ Expected Outcome
 
-a: '1'
+a: 1
 b:
-  - '2'
+  - 2
   -
     c: 'd'
 
