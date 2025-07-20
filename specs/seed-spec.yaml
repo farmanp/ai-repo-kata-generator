@@ -1,0 +1,24 @@
+# Seed Lesson Specification
+# Defines taxonomy and required fields for seed exercises
+
+seed_taxonomy:
+  - type: "mechanical"
+    description: "Hands-on focus on a method or class's internal behavior"
+  - type: "conceptual"
+    description: "Helps learners build a mental model of an algorithm or pattern"
+  - type: "debugging"
+    description: "Guides learners through reproducing and fixing a specific bug"
+  - type: "semantic"
+    description: "Highlights subtle language behavior or runtime semantics"
+
+seed_fields:
+  - title
+  - source_reference
+  - concept
+  - type
+  - estimated_time
+  - prompt
+  - hint
+  - expected_output
+  - reflection_question
+  - related_katas

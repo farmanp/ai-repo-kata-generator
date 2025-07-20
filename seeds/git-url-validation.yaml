@@ -1,0 +1,21 @@
+seed:
+  title: "Git URL Validation"
+  source_reference: "analyze_repo.py:12-18"
+  concept: "Regex-based Git URL verification"
+  type: "mechanical"
+  estimated_time: "5-10 minutes"
+  prompt: |
+    Inspect the `is_valid_git_url` function.
+    List two URLs that should return True and two that should return False.
+  hint: "Check the allowed protocols and optional `.git` suffix"
+  expected_output: |
+    True for:
+      - https://github.com/user/repo.git
+      - git@github.com:user/repo
+    False for:
+      - ftp://example.com/repo.git
+      - just_text
+  reflection_question: "Why support both HTTPS and SSH formats?"
+  related_katas:
+    - "Input Validation"
+    - "Regex Patterns"
